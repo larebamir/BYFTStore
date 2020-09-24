@@ -44,7 +44,7 @@ namespace JWTAuthenticationExample.Controllers
         {
             IActionResult response = Unauthorized();
             DataSet ds;
-            ds = _loginService.ValidateUser(login.UserName, login.Password);// EncryptionHelper.Encrypt(login["password"].ToString().Replace(" ", "+")));
+            ds = _loginService.ValidateUser(login.UserName, login.Password);   // EncryptionHelper.Encrypt(login["password"].ToString().Replace(" ", "+")));
             if (ds == null && ds.Tables.Count == 0)
             {
                 return (ActionResult)Ok(new { message = "Login Failed !", error = true, errorCode = "ER0001" });
